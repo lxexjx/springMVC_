@@ -16,7 +16,7 @@ public class OrderServiceImpl implements OrderService{
 
     OCP,DIP위반===>OrderServiceImpl이 DiscountPolicy애만 의존하도록 바꾸려면
     */
-    private  DiscountPolicy discountPolicy; //이렇게 바꿔주면 인터페이스에만 의존해 추상화 인터에만 의존해- but! nullpoint예외남(아무것도 할당된게 없어)DIP못지킴
+    private  DiscountPolicy discountPolicy; //이렇게 바꿔주면 인터페이스에만 의존해 추상화 인터페이스에만 의존해- but! nullpoint예외남(아무것도 할당된게 없어)DIP못지킴
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
