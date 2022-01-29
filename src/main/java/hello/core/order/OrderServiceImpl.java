@@ -8,15 +8,27 @@ import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService{
-
-    private final MemberRepository memberRepository = new MemoryMemberRepository();    //d여기서 회원을 찾고
-   /*
+    /*
     //private final DiscountPolicy discountPolicy = new FixDiscountPolicy(); 고정할인금액에서
     private final DiscountPolicy discountPolicy=new RateDiscountPoicy();    //로 바꿔면 됨
 
     OCP,DIP위반===>OrderServiceImpl이 DiscountPolicy애만 의존하도록 바꾸려면
     */
-    private  DiscountPolicy discountPolicy; //이렇게 바꿔주면 인터페이스에만 의존해 추상화 인터페이스에만 의존해- but! nullpoint예외남(아무것도 할당된게 없어)DIP못지킴
+
+//    private final MemberRepository memberRepository = new MemoryMemberRepository();    //d여기서 회원을 찾고
+//    private  DiscountPolicy discountPolicy; //이렇게 바꿔주면 인터페이스에만 의존해 추상화 인터페이스에만 의존해- but! nullpoint예외남(아무것도 할당된게 없어)DIP못지킴
+
+    private final MemberRepository memberRepository;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
+
+    private final DiscountPolicy discountPolicy;
+
+
+
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
