@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class ApplicationContextBeanFindTest {
+public class ApplicationContextBasicFindTest {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
 
@@ -26,7 +26,7 @@ public class ApplicationContextBeanFindTest {
     @DisplayName("이름 없이 타입으로만 조회")
     void finBeanByType(){
         MemberService memberService=ac.getBean(MemberService.class);
-        Assertions.assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
+        Assertions.assertThat(memberService).isInstanceOf(MemberServiceImpl.class);  //alt+enter로 static으로 바꿔줌
     }
 
     @Test
