@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
-
+    //memberService.join이거 사용하기 위해
 //    MemberService memberService=new MemberServiceImpl();
 
     MemberService memberService;
@@ -17,12 +17,12 @@ public class MemberServiceTest {
     }
     @Test
     void join(){
-        //given
+        //given ~주어졌을때
         Member member=new Member(1L,"membera",Grade.VIP);
-        //when
+        //when ~이렇게 했을 때
         memberService.join(member);
-        Member findMember=memberService.findMember(1L);
-        //then
+        Member findMember=memberService.findMember(1L); //찾아서 then에서 검증
+        //then ~이렇게 된다  join한거랑==찾은거랑 같은지
         Assertions.assertThat(member).isEqualTo(findMember);
     }
 
