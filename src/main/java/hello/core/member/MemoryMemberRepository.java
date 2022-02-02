@@ -3,6 +3,7 @@ package hello.core.member;
 import java.util.HashMap;
 import java.util.Map;
 
+//MemberRepository 구현체
 public class MemoryMemberRepository implements  MemberRepository{
 
     //저장소 만들기

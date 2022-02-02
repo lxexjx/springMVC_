@@ -1,16 +1,19 @@
 package hello.core.member;
 
+//회원 속성
 public class Member {
     private  Long id;
     private String name;
     private  Grade grade;
 
+    //생성자: ctrl+enter
     public Member(Long id, String name, Grade grade) {
         this.id = id;
         this.name = name;
         this.grade = grade;
     }
 
+    //get,set으로 private의 값을 설정
     public Long getId() {
         return id;
     }
