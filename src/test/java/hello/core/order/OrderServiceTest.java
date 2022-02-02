@@ -23,11 +23,10 @@ public class OrderServiceTest {
     MemberService memberService;
     OrderService orderService;
 
-
     @Test
     void createOrder(){
-        Long memberId=1L;       //long도 사용가능하나 null이 불가능함
-        Member member=new Member(memberId,"memberA", Grade.VIP);
+        Long memberId=1L;       //long도 사용가능하나 null을 넣을 수 없음음
+       Member member=new Member(memberId,"memberA", Grade.VIP);
         memberService.join(member);
         Order order= orderService.createOrder(memberId,"itemA",10000);
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
