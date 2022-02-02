@@ -11,14 +11,14 @@ public class MemberApp {
     public static void main(String[] args) {    //단축키psvm
 
 //        AppConfig appConfig=new AppConfig();
-//        MemberService memberService =appConfig.memberService();->직접 찾았다면
+//        MemberService memberService =appConfig.memberService();->직접 찾았다면. memberService여기에 memberServiceImpl있어서 appconfig에서 memberServiceImpl가 객체를 생성해서  주입해
 
         //springcontainer:config에있는 설정정보로 ApplicationContext객체를 관리, 컨테이너로 찾아와
         ApplicationContext applicationContext= new AnnotationConfigApplicationContext(AppConfig.class);
         MemberService memberService = applicationContext.getBean("memberService",MemberService.class); // 이 객체를 찾을 거야!(이름,타입)
 
         //회원가입
-        //MemberService memberService=new MemberServiceImpl();
+        //MemberService memberService=new MemberServiceImpl(); 기존에 직접 생성했다면
         Member member = new Member(1L, "memberA", Grade.VIP);  //ctrl+alt+v: 자동완성
         memberService.join(member); //member넣고 회원가입시킴
 

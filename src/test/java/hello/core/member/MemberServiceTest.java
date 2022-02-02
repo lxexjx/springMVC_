@@ -10,6 +10,7 @@ public class MemberServiceTest {
 //    MemberService memberService=new MemberServiceImpl();
 
     MemberService memberService;
+
     @BeforeEach
     public  void beforeEach(){
         AppConfig appConfig=new AppConfig();
