@@ -3,6 +3,7 @@ package hello.core.discount;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 
+//DiscountPolicy의 구현체
 public class RateDiscountPoicy implements DiscountPolicy {
 
     private int discountPercent=10;

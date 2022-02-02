@@ -1,14 +1,13 @@
 package hello.core.order;
 
 public class Order {
-
+//주문서
     private Long memberId;
     private String itemName;
     private int itemPrice;
     private int discountPrice;
 
     public Order(Long memberId, String itemName, int itemPrice, int discountPrice) {
-
         this.memberId = memberId;
         this.itemName = itemName;
         this.itemPrice = itemPrice;
@@ -52,6 +51,7 @@ public class Order {
         this.discountPrice = discountPrice;
     }
 
+    //객체를 출력하면 toString으로 나와
     @Override
     public String toString() {
         return "Order{" +
