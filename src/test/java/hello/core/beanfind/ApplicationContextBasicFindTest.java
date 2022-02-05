@@ -30,7 +30,7 @@ public class ApplicationContextBasicFindTest {
     }
 
     @Test
-    @DisplayName("구체 타입으로 조회")
+    @DisplayName("구체 타입으로 조회")  //instance로 조회 가능, 구현에 의존 안좋아~
     void finBeanByName2(){      //spring container에  객체가 등록이 돼 있으면 조회 가능
         MemberService memberService=ac.getBean("memberService",MemberServiceImpl.class);
         Assertions.assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
