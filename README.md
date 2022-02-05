@@ -54,6 +54,18 @@
   # 컨테이너
   의존관계 역전을 일으켜,AppConfig가 의존관계 주입을 대신해줘, DI컨테이너=AppConfig
   
+  #  스프링 컨테이너
+  @Bean 이라 적인 메서드 모두 호출해서 스프링 컨에이너에 등록
+  이전:필요 객체 AppConfig에서 직접 조회->스프링컨테이너에서 필요 스프링객체 찾아(applicationContext.getBean()로 찾아)
+  # 스프링 컨테이너 생성
+  ApplicationContext applicationContext =new AnnotationConfigApplicationContext(AppConfig.class); 로 객체를 생성
+  ApplicationContext: 스프링 컨테이너이자 인터페이스
+  1.new AnnotationConfigApplicationContext()로 AppConfig의 정보를 주면 스프링 컨테이너가 만들어짐
+    스프링컨테이너는 저장소(빈이름, 빈객체)가 만들어짐(구성정보:AppConfig.class 지정 필요),
+  2.컨테이너가 AppConfig.class정보를 보고 저장소에 빈등록해 @Bean~보고 호출해서 빈이름, 빈객체를 등록
+  3.스프링 빈 의존관계 설정:객체 생성하고 의존관계를 넣어줌. 생성과 
+  
+  
   
   
   
