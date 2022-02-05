@@ -14,21 +14,21 @@ public class ApplicationContextInfoTest {
     //ac.getBeanDefinitionNames()스프링에 등록되 빈 이름 조회
     @Test
     @DisplayName("모든 빈출력하기")
-    void findAllBean(){
+   public void findAllBean(){
         String[] beanDefinitionNames=ac.getBeanDefinitionNames();
-        for(String beanDefinitionName: beanDefinitionNames){
-            Object bean=ac.getBean(beanDefinitionName);
+        for(String beanDefinitionName: beanDefinitionNames){    //iter + tab
+            Object bean=ac.getBean(beanDefinitionName); //bean꺼내
             System.out.println("name = " + beanDefinitionName+"objecr="+bean);   //soutv:변수명 soutm:메서드명
 
         }
     }
 
     @Test
-    @DisplayName("애플리케이션 빈출력하기")
-    void findAppliucationBean(){
+    @DisplayName("애플리케이션 빈출력하기")    //
+    void findApplicationBean(){
         String[] beanDefinitionNames=ac.getBeanDefinitionNames();
         for(String beanDefinitionName: beanDefinitionNames){
-            BeanDefinition beanDefinition =ac.getBeanDefinition(beanDefinitionName);   //bean에 관한 정보들
+            BeanDefinition beanDefinition =ac.getBeanDefinition(beanDefinitionName);   //bean에 관한 정보들 꺼네기
 
             //ROLE_INFRASTRUCTURE:스프링이 내부에서 사용하는 빈
             //ROLE_APPLICATION:직접 등록한 애플리케이션 빈,spring내부가 아니라 내가 application 사용하려고 등록한 빈->5개만 출력됨
