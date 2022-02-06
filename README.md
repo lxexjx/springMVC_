@@ -65,8 +65,19 @@
   2.컨테이너가 AppConfig.class정보를 보고 저장소에 빈등록해 @Bean~보고 호출해서 빈이름, 빈객체를 등록
   3.스프링 빈 의존관계 설정:객체 생성하고 의존관계를 넣어줌. 생성과 
   
+  # 스프링 빈 상속 관계
+  빈 부모타입 조회시 자식이 여러개다 자식들 다 죄회됨
   
+  # BeanFactory 
+  BeanFactory(최상위)를 상속받은 ApplicationContext
+  # ApplicationContext
+  BeanFactory기능 상속 받아 제공,+부가기능    , ApplicationContext를 구현한 것중에 하나가 AnnotationConfig를 설정정보로 사용하는 ApplicationContext(AppConfig.class사용)
   
+  # GenericXml
+  xml문서를 설정정보로 사용, 컴파일 없이 빈설정정보를 변경가능
+  
+  # 빈 설정 메타 정보
+  BeanDefinition: 빈 정보 추상화
   
   
   
