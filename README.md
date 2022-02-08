@@ -77,7 +77,8 @@
   xml문서를 설정정보로 사용, 컴파일 없이 빈설정정보를 변경가능
   
   # 빈 설정 메타 정보
-  BeanDefinition: 빈 정보 추상화
+  BeanDefinition: 빈 정보 추상화->q빈생성
+  스프링컨테이너가 BeanDefinition정보만를 가지고 동작(추상화에만 의존하도록 설계)
   
   
   
