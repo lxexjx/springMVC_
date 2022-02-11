@@ -8,7 +8,7 @@ import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
 
 //OrderService의 구현체
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
     /*
     OrderServiceImpl이 직접 객체를 생성하고 구체적인 선택도함
     //private final DiscountPolicy discountPolicy = new FixDiscountPolicy(); 고정할인금액에서
@@ -24,21 +24,26 @@ public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
+
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
 
     //주문 생성 요청이 오면 회원정보를 조회하고, 할인정책에 회원을 넘겨
-   @Override
+    @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
         Member member = memberRepository.findById(memberId);    //멤버찾고
-        int discountPrice= discountPolicy.discount(member,itemPrice);    //discountPolicy는 알아서해~ 결과만 orderService에 던져줘-> 단일 체계 결과를 잘지킴
-        return  new Order(memberId,itemName,itemPrice,discountPrice);   //최종생성된 주문을 반화함
+        int discountPrice = discountPolicy.discount(member, itemPrice);    //discountPolicy는 알아서해~ 결과만 orderService에 던져줘-> 단일 체계 결과를 잘지킴
+        return new Order(memberId, itemName, itemPrice, discountPrice);   //최종생성된 주문을 반화함
         //->주문생성 요청이 오면 회원정보를 먼저 조회하고 할인정책에 넘겨서 최종 할인된 가격을 받고 최종 생성된 주문을 반환함
     }
-}
+
 /*OrderServiceImpl은 이제 FixDiscountPolicy이런거 의존안해.순수 인터페이스(discountPolicy)에만 의존
     생성자를 통해 어떤 구현 인스턴스가 들어올지 전혀 몰라,Appconfig에서 결정
     OrderServiceImpl에 이제 FixDiscountPolicy,RateDiscountPoicy객체의 읜존관계가 주입됨
 * */
+
+
+
+}

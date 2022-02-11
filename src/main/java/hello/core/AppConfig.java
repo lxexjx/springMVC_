@@ -28,14 +28,17 @@ public class AppConfig {
     //객체 생성하고 인터페이스에 어떤 게 들어갈지 MemberServiceImpl가 직접 했지만 이젠 Appconfug가 직접 환경설정을 해
     @Bean   //각 메서드에 bean이라 작성->spring container에 등록
     public MemberService memberService(){//MemberService 구현체인 객체가 생성되고
+        System.out.println("call AppConfig.memberService");
         return  new MemberServiceImpl(memberRepository()); //MemoryMemberRepository가 들어와
     }
     @Bean   //MemoryMemberRepository역할
     public MemoryMemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
     @Bean   //orderService역할
     public  OrderService orderService(){
+        System.out.println("call AppConfig.orderService");
         return  new OrderServiceImpl(memberRepository(),discountPolicy());
     }
     @Bean   //discountPolicy역할, 위에 discountPolicy()참고해~
