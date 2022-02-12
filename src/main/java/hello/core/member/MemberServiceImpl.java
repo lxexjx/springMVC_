@@ -34,7 +34,7 @@ MemberServiceImpl입장에서는 의존관계를 외부에서 넣어주는 효�
 
 
     //테스트 용동
-    public MemberRepository getMemberRepositorym() {
+    public MemberRepository getMemberRepository() {
         return memberRepository;
     }
 }
