@@ -2,6 +2,10 @@ package hello.core.discount;
 
 import hello.core.member.Grade;
 import hello.core.member.Member;
+import org.springframework.stereotype.Component;
+
+
+@Component
 
 //DiscountPolicy의 구현체
 public class RateDiscountPoicy implements DiscountPolicy {
