@@ -6,12 +6,15 @@ import hello.core.discount.RateDiscountPoicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
-
 //OrderService의 구현체
+
+@Component
+@RequiredArgsConstructor    //final이 붙은 값을 파라미터로 받는 생성자를 만들어줘
+
 public class OrderServiceImpl implements OrderService {
     /*
     OrderServiceImpl이 직접 객체를 생성하고 구체적인 선택도함
@@ -29,12 +32,12 @@ public class OrderServiceImpl implements OrderService {
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-
-    @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+//Lombok이 생성자를 자동으로 만들어줘
+//    @Autowired
+//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = discountPolicy;
+//    }
 
     //주문 생성 요청이 오면 회원정보를 조회하고, 할인정책에 회원을 넘겨
     @Override
