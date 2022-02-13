@@ -20,7 +20,7 @@ public class ComponentFilterAppConfigTest {
         BeanA beanA=ac.getBean("beanA",BeanA.class);
         assertThat(beanA).isNotNull();
 
-        ac.getBean("beansB",BeanB.class);
+        ac.getBean("beanB",BeanB.class);
         assertThrows(NoSuchBeanDefinitionException.class,
                                                        ()->ac.getBean("beandB",BeanB.class));
     }
