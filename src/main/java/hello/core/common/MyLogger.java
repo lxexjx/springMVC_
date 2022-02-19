@@ -9,11 +9,11 @@ import java.util.UUID;
 
 @Component
 @Scope(value="request")
-public class Mylogger {
+public class MyLogger {
     private String uuid;
     private String requestURL;
 
-    public void setrequestURL(String requestURL) {
+    public void setRequestURL(String requestURL) {
         this.requestURL = requestURL;
     }
 
